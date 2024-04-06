@@ -1,6 +1,6 @@
 from openpyxl import Workbook
 from openpyxl import load_workbook
-from openpyxl.styles import Font
+from openpyxl.styles import Alignment, Font
 import os
 
 def create_excel_file():
@@ -20,11 +20,19 @@ def create_excel_file():
             ws['D1'] = "New Value"
             ws['E1'] = "Gains/Losses (%)"
 
-            # Bold and uppercase font style
+            # Bold and uppercase font style for titles
             bold_font = Font(bold=True)
+            center_align = Alignment(horizontal='center')
             for cell in ws['1:1']:  # Iterate through all cells in the first row
                 cell.font = bold_font
-            
+                cell.alignment = center_align
+
+            # Right align for all other cells
+            right_align = Alignment(horizontal='right')
+            for row in ws.iter_rows(min_row=2, max_row=ws.max_row, min_col=1, max_col=ws.max_column):
+                for cell in row:
+                    cell.alignment = right_align
+
             wb.save(filename)
             print(f"Excel file '{filename}' created successfully.")
             break

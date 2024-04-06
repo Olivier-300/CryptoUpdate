@@ -124,7 +124,7 @@ def write_in_excel():
     else:    
         for row, new_tokens in enumerate(new_token_amounts, start=2):
             sheet[f"C{row}"] = new_tokens
-            print("New Token Amounts added successfully to the Excel file.")
+        print("New Token Amounts added successfully to the Excel file.")
     
     
     
