@@ -14,10 +14,10 @@
 
 ```
 CryptoPortfolio/
-│── crypto_tracker.py        # Main script to fetch and update data
-│── excel_manager.py         # Handles Excel file creation and updates
-│── my_cryptos.xlsx          # Excel file containing crypto data
-│── requirements.txt         # List of Python dependencies
+│── file_update.py        # Handles file updates and modifications
+│── menu.py               # CLI menu for user interactions
+│── my_cryptos.xlsx       # Excel file containing crypto data
+│── requirements.txt      # List of Python dependencies
 ```
 
 ## 🛠️ Installation
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ### 3️⃣ Run the main script
 ```bash
-python crypto_tracker.py
+python menu.py
 ```
 
 ## 📊 Excel File Format
@@ -51,15 +51,15 @@ The **my_cryptos.xlsx** file contains the following information:
 
 1️⃣ **Create a new Excel file**
 ```bash
-python excel_manager.py
+python menu.py
 ```
 2️⃣ **Update an existing Excel file**
 ```bash
-python excel_manager.py
+python file_update.py
 ```
 3️⃣ **Track your crypto performance**
 ```bash
-python crypto_tracker.py
+python menu.py
 ```
 
 ## 🔐 Technologies Used
